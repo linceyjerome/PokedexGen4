@@ -1,0 +1,18 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+
+# Ignore everything recursively
+*
+
+# But not the .js files
+!*.js
+
+# But not the .tsx files
+!*.tsx
+
+# Check subdirectories too
+!*/
