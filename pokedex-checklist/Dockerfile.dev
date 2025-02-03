@@ -1,0 +1,18 @@
+# Use an official Node.js runtime as a parent image
+FROM node:lts
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY ./index.html ./
+COPY ./vite.config.ts ./
+COPY ./tsconfig*.node.json ./
+
+ADD *.cjs ./
+
+# RUN npm run build
+# Start the app using npm
+CMD ["npm", "run", "dev"]
